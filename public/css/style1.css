@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* body {
+  display: grid;
+  place-items: center;
+  background: #2c3e50; 
+  text-align: center;
+} */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  /* display: grid; */
+  /* place-items: center; */
+  background: #2c3e50;
+  text-align: center;
+}
+
+.content {
+  width: 50rem;
+  height: 50rem;
+  padding: 10px 30px;
+  background: #34495e; /* Content background color for the event */
+  border-radius: 10px;
+  box-shadow: -3px -3px 7px #425b6e, 2px 2px 5px rgba(69, 92, 112, 0.288);
+}
+
+.content .text {
+  font-size: 33px;
+  font-weight: 600;
+  margin-bottom: 35px;
+  color: #ecf0f1; /* Text color for the event */
+}
+
+.field {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.field:nth-child(2) {
+  margin-top: 10px;
+}
+.field:nth-child(3) {
+  margin-top: 10px;
+}
+.field:nth-child(4) {
+  margin-top: 10px;
+}
+.field:nth-child(5) {
+  margin-top: 10px;
+}
+.field:nth-child(6) {
+  margin-top: 10px;
+}
+.field:nth-child(7) {
+  margin-top: 10px;
+}
+.field:nth-child(8) {
+  margin-top: 10px;
+}
+
+
+.field input {
+  height: 100%;
+  width: 100%;
+  padding-left: 45px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  background: #2c3e50; /* Input background color for the event */
+  color: #ecf0f1; /* Text color for the event */
+  border-radius: 25px;
+  box-shadow: inset 2px 2px 5px #1f2c38, inset -5px -5px 10px #34495e;
+}
+
+.field input:focus {
+  box-shadow: inset 1px 1px 2px #1f2c38, inset -1px -1px 2px #34495e;
+}
+
+.field span {
+  position: absolute;
+  color: #ecf0f1; /* Text color for the event */
+  width: 50px;
+  line-height: 50px;
+}
+
+.field label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 45px;
+  pointer-events: none;
+  color: #bdc3c7; /* Label color for the event */
+}
+/* .field input[type="email"]:valid ~ label {
+  opacity: 0;
+} */
+::placeholder {
+  /* color: red; */
+  opacity: 1; /* Firefox */
+}
+
+ 
+.field input:valid ~ label {
+  opacity: 0;
+}
+ 
+button {
+  margin: 15px 0;
+  width: 100%;
+  height: 50px;
+  font-size: 18px;
+  line-height: 50px;
+  font-weight: 600;
+  background: #3498db; /* Button background color for the event */
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #ecf0f1; /* Text color for the event */
+  box-shadow: 2px 2px 5px #1f2c38, -5px -5px 10px #34495e;
+}
+
+button:focus {
+  color: #ffffff; /* Focus color for the event */
+  box-shadow: inset 2px 2px 5px #1f2c38, inset -5px -5px 10px #34495e;
+}
+
+.sign-up {
+  margin: 10px 0;
+  color: #ecf0f1; /* Text color for the event */
+  font-size: 16px;
+}
+
+.sign-up a {
+  color: #e74c3c; /* Link color for the event */
+  text-decoration: none;
+}
+
+.sign-up a:hover {
+  text-decoration: underline;
+}
+.field select {
+  height: 100%;
+  width: 100%;
+  padding-left: 45px;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  background: #2c3e50; /* Input background color for the event */
+  color: #ecf0f1; /* Text color for the event */
+  border-radius: 25px;
+  box-shadow: inset 2px 2px 5px #1f2c38, inset -5px -5px 10px #34495e;
+}
+
+.field select:focus {
+  box-shadow: inset 1px 1px 2px #1f2c38, inset -1px -1px 2px #34495e;
+}
+
+.field select ~ span {
+  position: absolute;
+  color: #ecf0f1; /* Text color for the event */
+  width: 50px;
+  line-height: 50px;
+  right: 10px; /* Adjust the position as needed */
+  pointer-events: none;
+}
+
+.field select ~ label {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 45px;
+  pointer-events: none;
+  color: #bdc3c7; /* Label color for the event */
+}
+
+/* Additional styling for the arrow */
+.field select ~ span::before {
+  content: '\25BC'; /* Unicode character for a down arrow */
+  font-size: 16px;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #ecf0f1; /* Arrow color for the event */
+}
+
+::placeholder{
+  font-weight: 100;
+  color: rgba(255, 255, 255, 0.452);
+  /* opacity: 1; */
+}
+.imgfield{
+  height: 10rem;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+#imgs{
+  
+  display: none;
+}
+img {
+  border: 1px solid red;
+  border-radius: 5px;
+
+  height: 140px;
+  width: 150px;
+}

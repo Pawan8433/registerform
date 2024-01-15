@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <title>Registration form</title>
+</head>
+
+<body>
+  <div class="content">
+    <div class="text">Registration</div>
+    <form name="registrationForm" action="/" method="post" onsubmit="return validateForm()">
+      <div class="field">
+        <input type="text" required name="name" autocomplete="off" />
+        <span class="fas fa-user"></span>
+        <label>Name</label>
+      </div>
+      <div class="field">
+        <input type="email" required name="email" autocomplete="off" placeholder="Email" />
+        <span class="fas fa-envelope"></span>
+      </div>
+      <div class="field">
+        <input autocomplete="off" type="tel" required name="mobile" maxlength="10" />
+        <span class="fas fa-mobile-alt"></span>
+        <label>Mobile Number</label>
+      </div>
+      <div class="field">
+        <input autocomplete="off" type="text" required name="college" />
+        <span class="fas fa-university"></span>
+        <label>College Name</label>
+      </div>
+      <div class="field">
+        <input autocomplete="off" type="text" required name="class" />
+        <span class="fas fa-graduation-cap"></span>
+        <label>Class with Stream</label>
+      </div>
+      <div class="field">
+        <span class="fas fa-gamepad"></span>
+        <select name="Course" id="Course" required>
+          <option>Select a Game</option>
+          <option value="digister">Digi-ster</option>
+          <option value="logo">Logo Tavling</option>
+          <option value="front">Frontend Wizard</option>
+          <option value="Treasurehunt">Treasure Hunt</option>
+          <option value="valorant">Valorant</option>
+          <option value="nerdncode">Nerd N Code</option>
+          <option value="technizia">Technizia</option>
+        </select>
+      </div>
+      <div class="field imgfield" id="imgs">
+        <img src="" alt="" id="photo" />
+      </div>
+      <div class="field">
+        <input autocomplete="off" type="tel" required name="transaction" />
+        <span class="fas fa-exchange-alt"></span>
+        <label>Transaction ID</label>
+      </div>
+    
+      <button type="submit">Sign up</button>
+    
+    </form>
+  </div>
+
+  <script>
+    function validateForm() {
+      var name = document.forms["registrationForm"]["name"].value;
+      var email = document.forms["registrationForm"]["email"].value;
+      var mobile = document.forms["registrationForm"]["mobile"].value;
+      var college = document.forms["registrationForm"]["college"].value;
+      var classInput = document.forms["registrationForm"]["class"].value;
+
+      // Regular expression to validate email format
+      var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (name === "" || email === "" || mobile === "" || college === "" || classInput === "") {
+        alert("All fields must be filled out");
+        return false;
+      }
+
+      if (!emailPattern.test(email)) {
+        alert("Enter a valid email address");
+        return false;
+      }
+
+      if (mobile.length !== 10) {
+        alert("Mobile number must be 10 digits");
+        return false;
+      }
+    }
+
+    const photo = document.querySelector("#photo");
+    const imgsContainer = document.getElementById("imgs");
+
+    document.querySelector("#Course").addEventListener("change", (e) => {
+      const courseValue = e.target.value;
+      const courseImageMap = {
+        valorant: "https://i.postimg.cc/R0mMyjZw/valoo.jpg",
+        digister: "https://i.postimg.cc/gkDWQN5K/allgames.jpg",
+        logo: "https://i.postimg.cc/gkDWQN5K/allgames.jpg",
+        technizia: "https://i.postimg.cc/gkDWQN5K/allgames.jpg",
+        nerdncode: "https://i.postimg.cc/gkDWQN5K/allgames.jpg",
+        front: "https://i.postimg.cc/gkDWQN5K/allgames.jpg",
+        Treasurehunt: "https://i.postimg.cc/6QMBDzmZ/Free.jpg",
+        games: "" // Add a default image if needed
+      };
+
+      if (courseImageMap.hasOwnProperty(courseValue)) {
+        photo.src = courseImageMap[courseValue];
+        imgsContainer.style.display = "block";
+      } else {
+        // Handle default case or show an error message
+        imgsContainer.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
