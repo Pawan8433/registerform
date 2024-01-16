@@ -68,7 +68,7 @@ body {
 }
 .field:nth-child(7) {
   margin-top: 10px;
-  margin-bottom:20px;
+  margin-bottom:30px;
 }
 .field:nth-child(8) {
   margin-top: 10px;
@@ -213,6 +213,7 @@ img {
   border: 1px solid red;
   border-radius: 5px;
 
-  height: 140px;
-  width: 150px;
+
+  height: 180px;
+  width: 200px;
 }
